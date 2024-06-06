@@ -19,6 +19,8 @@ class FirstScreen extends StatelessWidget {
       );
     }
 
+    const space = SizedBox(height: 20);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
@@ -27,14 +29,23 @@ class FirstScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: gotoSecondScreen,
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0))),
-              child: const Text('Second Screen'),
-            )
+              child: const Text('Second Screen - Using Parameter'),
+            ),
+            space,
+            ElevatedButton(
+              onPressed: gotoSecondScreen,
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0))),
+              child: const Text('Third Screen - Using RouteSettings'),
+            ),
           ],
         ),
       ),
