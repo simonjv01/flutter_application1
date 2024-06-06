@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/second_screen.dart';
 
+// ignore: must_be_immutable
 class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
+  FirstScreen({super.key});
+  String myMessage = 'Good job!';
 
   @override
   Widget build(BuildContext context) {
+    void gotoSecondScreen() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) {
+          return const SecondScreen(
+            message: 'Good job!',
+          );
+        }),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
@@ -15,7 +29,7 @@ class FirstScreen extends StatelessWidget {
         child: Column(
           children: [
             ElevatedButton(
-              onPressed: () {},
+              onPressed: gotoSecondScreen,
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0))),
